@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+dt
+  {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #6f97a6;
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  background: #dad6d6;
+  padding: 50px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  line-height: 2;
+  padding: 5px;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #ecf4f0;
+  line-height: 1.5;
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #01036e;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Vika Denisevich <br>Lab 1 Web design</br></h2>
+</header>
+
+<section>
+  <nav>
+    <ul style="list-style-type: square;">
+      <li><a href="#first"> When HTML5 has become a standard? What were the main reasonsfordeveloping new standard?</a></li>
+      <li><a href="#second">What is a difference between W3C HTML5 and WHATWG HTML Living Standard?</a></li>
+      <li><a href="#third">What is the minimal HTML page code?</a></li>
+      <li><a href="#forth">Comment on semantic and presentational markup. Why presentational markup is considered deprecated now?</a></li>
+      <li><a href="#fifth">How you can check browser support for particular tag or attribute?</a></li>
+      <li><a href="#sixth">What are the audio and video formats, officially supported by HTML standard? What happens if you use other format?</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <dl> 
+        <dt id = "first"> When HTML5 has become a standard? What were the main reasonsfordeveloping new standard?</dt>
+        <dd>On 28 October 2014, HTML5 was released as a W3C Recommendation, bringing the specification process to completion. 
+            Its objectives were to improve the language with support for new multimedia and other new features to keep the language both easily readable 
+            by humans and consistently understood by computers and devices such as web browsers, parsers, and so on, as well as to be backward compatible with existing web browsers.</dd>
+        
+        <p><dt id = "second">What is a difference between W3C HTML5 and WHATWG HTML Living Standard?</dt>
+        <dd>The W3C "HTML5" standard was snapshot-based (HTML5, HTML 5.1, etc.) and static, while the WHATWG "HTML living standard" is continually updated. 
+            The relationship had been described as "fragile", even a "rift", and characterized by "squabbling".</dd></p>
+
+        <p><dt id = "third">What is the minimal HTML page code?</dt>
+        <dd>The minimal HTML page code defines the basic structure of an HTML document, including elements like DOCTYPE html, html, head, meta, title, and body, 
+            providing essential information and content for rendering a webpage in a browser.</dd></p>
+
+        <p><dt id = "forth">Comment on semantic and presentational markup. Why presentational markup is considered deprecated now?</dt>
+        <dd>Semantic markup focuses on using HTML elements to convey the meaning and structure of the content, making it more understandable for both humans and machines. It emphasizes the purpose of the content rather than its appearance.
+          <br>Presentational markup, on the other hand, involves using HTML elements primarily for styling and visual presentation purposes. It focuses on how the content looks rather than its underlying meaning or structure. </br>
+              Presentational markup is considered deprecated because it mixes content with styling, making it harder to maintain, less accessible, and less adaptable to different devices and platforms. Separating content and presentation using CSS allows for cleaner code, better accessibility, and easier updates.</dd> </p>
+    
+        <p><dt id = "fifth">How you can check browser support for particular tag or attribute?</dt>
+        <dd>In order to check browser support for a particular HTML tag or attribute, I can visit various specific websites finding the definite tag or attribute I'm interested in.
+          <br>Examples: </br> https://caniuse.com/ 
+          <br>https://www.w3schools.com/ </br>
+          </dd></p>
+        
+        <p><dt id = "sixth">What are the audio and video formats, officially supported by HTML standard? What happens if you use other format?</dt>
+        <dd>The HTML standard officially supports specific audio and video formats such as MP3, Ogg Vorbis, WAV for audio, and MP4 (H.264), WebM (VP8 or VP9) for video. 
+            Using unsupported formats can lead to varying behavior in different browsers, potentially resulting in playback issues or requiring users to download the file instead of playing it directly. 
+            To ensure consistent playback across browsers and devices, it's advisable to stick to the officially supported formats.</dd></p>
+        </dl>
+  </article>
+</section>
+
+<div style="text-align:center"> 
+<video width="500" controls>
+   <source src="C:\Users\troble_tori\Downloads\Jujutsu Kaisen 0 - Rockstar [Edit_AMV]!.mp4" type="video/mp4">
+</video>
+</div>
+
+<p align = "center"> Video courtesy of 
+<a href="https://www.youtube.com/watch?v=f4AocpJDfsM/" target="_blank"> XENOZ </a>. </p>
+
+<footer>
+  <p>Well, well, well, you got me at the 7th task. I had a wonderful Lorem Ipsum before that. What concerns feedback, I can say that it's not the first time I deal with the CSS 
+  but nevertheless I had several questions during the lab's complement. The most difficult part was to clear out new for me things and the way they work like for instance:
+  how blocks are interconnected with each other and how definite tags should be used and placed in a definite place. However, I enjoyed the result and almost the process, despite spent nerves of course^-^</p>
+  <img src="C:\Users\troble_tori\Downloads\SBBSU.jpg" alt="SBSU logo" height="100" width="150">
+</footer>
+
+</body>
+</html>
