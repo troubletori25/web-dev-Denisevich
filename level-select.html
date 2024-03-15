@@ -20,15 +20,7 @@
     cursor: pointer;
     }
 
-    #image-container {
-            position: relative;
-            width: 800px; /* Adjust the width and height to match your image size */
-            height: 600px;
-            margin: 0 auto; /* Center the image horizontally */
-            cursor: pointer;
-        }
-
-        #tooltip {
+    #tooltip {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -38,17 +30,17 @@
             padding: 10px;
             border-radius: 5px;
             display: none; /* Hide tooltip by default */
-        }
+    }
         
-        #image-container:hover #tooltip {
+    #image-container:hover #tooltip {
             display: block;
-        }
+    }
 
         /* Hide tooltip when hovering over specific areas */
-        #image-container area[href="level1.html"]:hover + #tooltip,
-        #image-container area[href="final-boss.html"]:hover + #tooltip {
+    #image-container area[href="level1.html"]:hover + #tooltip,
+    #image-container area[href="final-boss.html"]:hover + #tooltip {
             display: none;
-        }
+    }
 
 </style>
   <body> 
@@ -63,4 +55,3 @@
     </div>
   </body>
 </html>
-
