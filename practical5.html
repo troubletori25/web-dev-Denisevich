@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practical 5 WEB-design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        .roboto-regular {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        body {
+           background: #ffffff;
+           text-align: left;
+           height: 220vh;
+           padding-left: 90px;
+           padding-top: 20px;
+           padding-right: 90px;
+        }
+        ::selection {
+            background-color: rgb(16, 141, 186);
+            color: rgb(255, 255, 255);
+        }
+        h1 {
+            text-align: center;
+        }
+        img {
+            float: right;
+            max-width: 400px;
+            margin: 0 30px 30px 0;
+        }
+        #Answer1 {
+            overflow: auto;
+        }
+        .answ3 {
+            overflow: auto;
+        }
+        .image-container {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        ul {
+            line-height: 1.5;
+        }
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #7ba2a3;
+        }
+        header li {
+        float: left;
+        }
+        header li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }   
+        footer {
+            background-color: #e78ac9;
+            margin-top: 100px;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Answers to the questions</h1>
+        <ul>
+            <li><a href="#Answer1">Answer1</a></li>
+            <li><a href="#Answer2">Answer2</a></li>
+            <li><a href="#Answer3">Answer3</a></li>
+            <li><a href="#Answer4">Answer4</a></li>
+            <li><a href="#Answer5">Answer5</a></li>
+        </ul>
+    </header>
+        <div id ="Answer1">
+            <h3>What is a box model in CSS? Give box-sizing property definition</h3>
+            <p>The box model in CSS is like putting each element on a web page in a box. 
+            This box has layers: content, padding, border, and margin. Content is what's inside the box, padding is the space around the content, border is the outline of the box 
+            and margin is the space around the box itself. Understanding and controlling these layers helps in designing web layouts.</p>
+            <img src = "css-box-sizing-768x426.jpg" alt = "box-sizing" height = 120 width = 270>
+            <p>The 'box-sizing' property in CSS determines how the browser calculates the total width and height of an element, including its padding and border. 
+            There are two main values: <em>'content-box'</em> and <em>'border-box'</em>.
+            </p>
+        </div>
+        <div id = "Answer2">
+            <h3>What is a “clearfix hack” and when does it need to be applied?</h3>
+            <p>The "clearfix hack" is a CSS technique used to fix layout issues caused by floated elements. When you have floated elements inside a container, sometimes the container's height collapses, causing layout problems. 
+            The clearfix hack is applied to the container element to force it to encompass its floated children properly, ensuring that it stretches to contain its content and displays correctly.</p>
+        </div>
+        <div id = "Answer3">
+            <h3>What is a “margin collapse” and what are the use cases for margin: auto and negative margin values?</h3>
+            <div class = "answ3">
+            <p>Margin collapse is when the top and bottom margins of two adjacent elements collapse into a single margin. This can happen in certain situations, like when there's no content or padding separating the margins, causing them to combine rather than stack on top of each other.</p>
+            <div class="images-container">
+                <img src="OIP.jpg" alt="margin1" >
+                <img src="31-flexbox-with-auto-margins.avif" alt="margin2">
+            </div>
+            <ul><li><strong><em>Use cases for margin: auto:</em></strong> This property is often used to center elements horizontally within their parent container. Setting 'margin: auto' on a block-level element will evenly distribute the remaining space around it, centering it horizontally.</li>
+                <li><strong><em>Use cases for negative margin values:</em></strong> Negative margins are sometimes used to adjust the positioning of elements. They can be used to overlap elements or pull them closer to each other. However, they should be used with caution as they can affect the layout unpredictably, especially when combined with other layout techniques.</li>
+            </ul>
+            </div>
+        </div>
+        <div id = "Answer4">
+            <h3>What was the problem with achieving Holy Grail layout?</h3>
+            <p>The main challenges in achieving the Holy Grail layout were making all columns the same height, allowing the center one to adjust to content ensuring the layout remained flexible for different screen sizes. 
+            This often required complex CSS and JavaScript solutions.</p>
+            <img src="holy-grail-3-column-responsive-layout-diagram.png" alt="grail layout">
+        </div>
+        <div id = "Answer5">
+            <h3>What are the modern ways to achieve Holy Grail layout?</h3>
+            <p>Modern CSS techniques like Flexbox and Grid Layout have simplified achieving the Holy Grail layout. With Flexbox, 'setting display: flex;'' on a container makes its children flexible, allowing easy alignment and resizing. Grid Layout provides a two-dimensional grid system for precise control over layout, making complex arrangements like the Holy Grail layout straightforward with minimal code.
+            These techniques offer better browser support and cleaner code, enabling developers to create flexible and responsive layouts with ease.</p>
+        </div>
+    <footer>
+        <p>The lab was accomplised by <strong>Viktoria Denisevcih</strong>, course: "Web design", date: 21.04.24, the document was created on Saturday in VS Code</p>
+        <a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods">Additional refrence 1</a>
+        <a href = "https://www.geeksforgeeks.org/how-to-apply-the-clearfix-hack-in-css/">Additional refrence 2</a>
+        <a href = "https://www.w3schools.com/Css/css_boxmodel.asp">Additional refrence 3</a>
+    </footer>
+</body>
+</html>
