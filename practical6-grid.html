@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practical 6 Grid layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column layout */
+            grid-template-areas:
+                "header"
+                "hero";
+        }
+        
+        header {
+            grid-area: header;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+        
+        .logo {
+            width: 130px; 
+            margin-left: 40px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }   
+
+        nav ul li {
+            float: left;
+            margin-right: 50px;
+        }
+
+        nav ul li a {
+            display: block;
+            color: rgb(2, 7, 116);
+            padding: 14px 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #efefef;
+        }
+
+        .hero {
+            grid-area: hero;
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+            text-align: left;
+        }
+
+        .hero img {
+            float: left;
+            max-width: 20%; 
+            margin: 0 30px 0 0; 
+        }
+
+        .hero h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0px;
+            margin-left: 70px;
+            color: rgb(2, 7, 116);
+        }
+        .New_items {
+            grid-area: New_items;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .preview {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .preview img {
+            width: 100%;
+        }
+
+        .preview h2 {
+            margin-left: 0;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .preview p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .read-more {
+            background-color: #1156be;
+            color: #ffffff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #b3008c;
+        }
+
+         /* Media Queries */
+         @media screen and (max-width: 768px) {
+            header {
+                justify-content: center;
+            }
+            .logo {
+                margin-left: 0;
+            }
+            nav ul li {
+                margin-right: 10px;
+            }
+            .hero {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .hero img {
+                max-width: 100%;
+                margin: 0;
+            }
+            .hero h1 {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .preview h2 {
+                font-size: 18px;
+            }
+            .preview p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="27F18F86-8ACA-4D37-9E03-43C802090881_c0b59098-5507-42e0-99e2-7dd7399c1904_480x480.webp" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">More</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="hero">
+            <img src="DSC00899.webp" alt="Eyeliner">
+            <h1>Rainbow Metallic Bundle - Eyeliner - Glisten Cosmetics</h1>
+            <p>Create vibrant looks with our Wet Liners! These small but mighty eyeliners pack a punch with full-colour payoff that won't crack or fade. Step up your look without breaking the bank!</p>
+            <p>How to use: Open lid, add a small amount of water to lid, dip brush into water (not too much) and then swirl the brush into the pigment and watch the colour pay off!  </p>
+            <p> Includes: Ametrine, Angel, Apple, Inferno, Karma, Merbabe, Moonlight, Moss, Poison Berry & Sulphur </p>
+        </section>
+    </div>
+    <h2>Beneficial propositions</h2>
+    <section class="New_items">
+        <div class="preview">
+            <img src="IMG_9647.webp" alt="Product 1">
+            <h2>Matte/UV Rainbow - 15 Pan Palette</h2>
+            <p>£60.00</p>
+            <p>Limited 15 Pan Palettes for only £60!!
+            15 pan palette with Cherryade (UV), Orangeade (UV), Coral (UV), Papaya, Solar, Loch Ness, Seltzer (UV), Bubblegum (UV), Blueberry (UV), Sapphire, Plum (UV), Periwinkle (UV), Strawberry (UV), Dusty & Milk</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="preview">
+            <img src="DB_01267(1).webp" alt="Product 2">
+            <h2>Chroma Gloss Full Bundle - Multichrome Lipgloss</h2>
+            <p>£100.00</p>
+            <p>Get ready to shine in every dimension with Chroma Gloss! Featuring a smooth and lightweight formula, Chroma Gloss seamlessly blends stunning hues to create a dazzling effect that shifts at every angle - sure to make your lips look out of this world.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="preview">
+            <img src="Split_Liner_A04.webp" alt="Product 3">
+            <h2>Pastel Circle (UV) Split Liner - Eyeliner</h2>
+            <p>£12.00</p>
+            <p>Say hello to our Circle Split Liners! Get creative doing an ombré liner or even mix the shades to make a new shade!
+
+                How to use: Open lid, add a small amount of water to lid, dip brush into water (not too much) and then swirl the brush into the pigment and watch the colour pay off!</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="preview">
+            <img src="Newcolourbundle.webp" alt="Product 4">
+            <h2>Spectra Lash New Colour Bundle - Mascara</h2>
+            <p>£56.00</p>
+            <p>Transform your lashes giving them a pop of colour with Spectra Lash! Paint your eyes in a kaleidoscope of colours with this pigmented, lengthening mascara. With its one-of-a-kind formula, you'll be turning heads everywhere you go. Give your eyelashes a creative makeover that's guaranteed to make your eyes pop!</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </section>
+</body>
+</html>
