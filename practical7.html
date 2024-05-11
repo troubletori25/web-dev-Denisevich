@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 7 Web Design</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="reset"] {
+            border: 1px solid #121212;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #D9D9D9; 
+        }
+
+        input[type="button"] {
+            width: 100%;
+            background-color: #0776A0; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px; 
+        }
+
+        input[type="button"]:hover {
+            background-color: #00678C; 
+        }
+
+        output {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .owl-carousel {
+            margin-bottom: 20px;
+        }
+
+        .owl-nav {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #0776A0;
+            cursor: pointer;
+            border: none;
+            background: none;
+            outline: none;
+        }
+
+        .owl-prev {
+            left: -30px; 
+        }
+
+        .owl-next {
+            right: -30px;
+        }
+
+        .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .owl-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #0776A0;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .owl-dot.active {
+            background-color: #00678C;
+        }
+    </style> 
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Owl Carousel JavaScript  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000, // Change slide every 5 seconds
+                autoplayHoverPause: true, // Pause autoplay on hover
+                nav: true,
+                navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], //represent the navigation arrows within the Owl Carousel
+                dots: true
+            });
+        });
+
+        function calculate(num1, operator, num2) {
+            switch(operator) {
+                case '+':
+                    return num1 + num2;
+                case '-':
+                    return num1 - num2;
+                case '*':
+                    return num1 * num2;
+                case '/':
+                    if(num2 != 0) {
+                        return num1 / num2;
+                    } 
+                    else {
+                        return "Error: Division by zero is not allowed.";
+                    }
+                default: 
+                    return "Error: Invalid operator.";
+            }        
+        }
+        
+        function performCalculation() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var operator = document.getElementById('operation').value;
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = calculate(num1, operator, num2);
+            document.getElementById('result').textContent = "The result is: " + result;
+        }
+
+        function clearForm() {
+            document.getElementById('calculatorForm').reset();
+            document.getElementById('result').textContent = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form id="calculatorForm">
+            <label for="num1">Enter the first number:</label><br>
+            <input type="text" id="num1" name="firstNumber" value="0"><br>
+            <label for="num2">Enter the second number:</label><br>
+            <input type="text" id="num2" name="secondNumber" value="0"><br>
+            <label for="operation">Select operation:</label>
+            <select id="operation" name="operation">
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="*">Multiplication (*)</option>
+                <option value="/">Division (/)</option>
+            </select><br><br>
+            <input type="reset" value="Reset" onclick="clearForm()">
+            <input type="button" value="Calculate" onclick="performCalculation()">    
+            <output id="result"></output>
+        </form>
+
+        <div class="owl-carousel">
+            <div class="slide">
+                <h2>Explain "repaint" and "reflow" of the webpage.</h2>
+                <p>"Repaint" and "reflow" are terms used to describe the processes involved in rendering webpages. Reflow calculates the layout of elements on a webpage, determining their size, position, and arrangement based on content and styles. 
+                Repaint updates the visual appearance of elements without changing their layout. It's triggered by changes to visual properties like color, background, or visibility. 
+                Both processes are essential for displaying content accurately andvcan impact performance if not managed efficiently.</p>
+            </div>
+            <div class="slide">
+                <h2>How does JavaScript on the webpage affect page load speed and performance?</h2>
+                <p>JavaScript on a webpage can slow down page loading because the browser has to download and execute the script before rendering the page.
+                If JavaScript is poorly optimized or excessive, it can block rendering, causing delays in displaying content. 
+                This affects performance, making the page feel slow to users. To improve speed, it's essential to minimize and optimize JavaScript code.</p>
+            </div>
+
+            <div class="slide">
+                <h2>What is "minification" of the script? Why is it useful to minify your scripts?</h2>
+                <p>Minification is the process of removing unnecessary characters like spaces, comments, and line breaks from code to make it smaller. 
+                This makes scripts faster to download and load on web pages, improving overall website performance.</p>
+            </div>
+
+            <div class="slide">
+                <h2>What is a JS Web Worker and when do we need it?</h2>
+                <p>JS Web Worker is like a extra worker that handles demanding tasks without interrupting the main work happening on a webpage. It's useful for keeping the webpage responsive when dealing with tasks that require a lot of processing power, like complex calculations or large data operations.</p>
+            </div>
+            <div class="slide">
+                <h2>Sources:</h2>
+                <ul>
+                    <li><a href="https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg">Understanding Reflow and Repaint in the browser</a></li>
+                    <li><a href="https://getpublii.com/blog/javascript-speed-and-performance.html">What impact does JavaScript have on the speed and performance of a website?</a></li>
+                    <li><a href="https://www.freecodecamp.org/news/javascript-performance-async-defer/">JavaScript Performance - How to Improve Page Speed with async and defer</a></li>
+                    <li><a href="https://www.imperva.com/learn/performance/minification/">Minification</a></li>
+                    <li><a href="https://web.dev/learn/performance/web-worker-overview#:~:text=The%20feature%20that%20allows%20for%20multi-threading%20in%20JavaScript,causing%20long%20tasks%20that%20make%20the%20page%20unresponsive.">An overview of web workers</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
